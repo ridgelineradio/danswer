@@ -322,7 +322,7 @@ const Main = () => {
   }
 
   if (
-    !appCredentialSuccessfullyFetched ||
+    !appCredentialSuccessfullyFetched &&
     !serviceAccountKeySuccessfullyFetched
   ) {
     return (
