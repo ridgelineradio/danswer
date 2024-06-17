@@ -150,8 +150,8 @@ def delete_google_app_cred() -> None:
 
 
 def get_service_account_key() -> GoogleServiceAccountKey:
-    creds_str = str(get_dynamic_config_store().load(GOOGLE_DRIVE_SERVICE_ACCOUNT_KEY))
-    return GoogleServiceAccountKey(**json.loads(creds_str))
+    creds_dict = get_dynamic_config_store().load(GOOGLE_DRIVE_SERVICE_ACCOUNT_KEY)
+    return GoogleServiceAccountKey.parse_obj(creds_dict)
 
 
 def upsert_service_account_key(service_account_key: GoogleServiceAccountKey) -> None:
